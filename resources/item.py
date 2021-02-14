@@ -38,7 +38,7 @@ class Item(Resource):
         return {"message":"An error occured inserting the data"}, 500 # internal server error, not user's fault 
     return item.json(), 201
     
-  #@jwt_required()
+  @jwt_required()
   def delete(self, name):
     item = ItemModel.find_by_name(name)
     if item is None: # same as Item.find_by_name(name)
