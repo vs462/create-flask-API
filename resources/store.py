@@ -6,7 +6,7 @@ from models.store import StoreModel
 
 class Store(Resource):
     def get(self, name):
-        store = StoreModel.find_by_name(name)
+        store = StoreModel.find_by_name(name) # name
         if store:
             return store.json()
         return {'message': 'Store not found'}, 404
